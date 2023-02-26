@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-25T20:25:16 IST" name="Default suite" finished-at="2023-02-25T20:26:23 IST" duration-ms="67096">
+    <groups>
+      <group name="sub">
+        <method signature="GetProductTitle.SearchKeywords()[pri:2, instance:com.amazon.practice.GetProductTitle@290222c1]" name="SearchKeywords" class="com.amazon.practice.GetProductTitle"/>
+        <method signature="GetProductTitle.subMenu()[pri:1, instance:com.amazon.practice.GetProductTitle@290222c1]" name="subMenu" class="com.amazon.practice.GetProductTitle"/>
+      </group> <!-- sub -->
+    </groups>
+    <test started-at="2023-02-25T20:25:16 IST" name="Default test" finished-at="2023-02-25T20:26:23 IST" duration-ms="67096">
+      <class name="com.amazon.practice.GetProductTitle">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:25:16 IST" name="browserLaunch" finished-at="2023-02-25T20:25:45 IST" duration-ms="28750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="subMenu()[pri:1, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:25:45 IST" name="subMenu" finished-at="2023-02-25T20:25:47 IST" duration-ms="1689" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subMenu -->
+        <test-method signature="SearchKeywords()[pri:2, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:25:47 IST" name="SearchKeywords" finished-at="2023-02-25T20:25:55 IST" duration-ms="8661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchKeywords -->
+        <test-method signature="windowHandles()[pri:3, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:25:55 IST" name="windowHandles" finished-at="2023-02-25T20:26:13 IST" duration-ms="17417" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- windowHandles -->
+        <test-method signature="screenshot()[pri:4, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:26:13 IST" name="screenshot" finished-at="2023-02-25T20:26:13 IST" duration-ms="506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method signature="goToCart()[pri:5, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:26:13 IST" name="goToCart" finished-at="2023-02-25T20:26:22 IST" duration-ms="9315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToCart -->
+        <test-method signature="getTitlePage()[pri:6, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:26:22 IST" name="getTitlePage" finished-at="2023-02-25T20:26:23 IST" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTitlePage -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.amazon.practice.GetProductTitle@290222c1]" started-at="2023-02-25T20:26:23 IST" name="quit" finished-at="2023-02-25T20:26:23 IST" duration-ms="568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.amazon.practice.GetProductTitle -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
