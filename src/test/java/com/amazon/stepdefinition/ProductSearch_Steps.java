@@ -1,22 +1,43 @@
 package com.amazon.stepdefinition;
 
+import com.amazon.cucumber.TestContext;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Set;
 
+import javax.naming.Context;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.amazon.baseclass.BaseClass;
+import com.amazon.managers.DriverManager;
+import com.amazon.managers.PageObjectManager;
+import com.amazon.pageObjects.HomePage;
+import com.amazon.runner.TestRunner;
+import com.amazon.enums.*;
 
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class StepDefinition extends BaseClass {
+public class ProductSearch_Steps extends BaseClass {
+
+	WebDriver driver = TestRunner.driver;
+	TestContext testContext;
+	Scenario s;
+
+	public ProductSearch_Steps(TestContext context) {
+
+		this.testContext = context;
+		testContext.setDriver(driver);
+		testContext.initial(driver);
+	}
 
 	public static List<WebElement> allSelectedOptions;
 	public static Select DropdownList;
@@ -25,10 +46,15 @@ public class StepDefinition extends BaseClass {
 	public static String GetT2;
 
 	@When("get Dropdown List")
-	public void get_dropdown_list() {
-		WebElement dropdown = driver.findElement(By.id("searchDropdownBox"));
-		DropdownList = new Select(dropdown);
+	public void get_dropdown_list() throws Exception {
+
+	
+		testContext.getDriver().get("https://www.amazon.in");
+
+		DropdownList = new Select(testContext.getPageObjectManager().getHomePage().getDropdown());
+
 		allSelectedOptions = DropdownList.getOptions();
+
 
 	}
 
@@ -50,8 +76,8 @@ public class StepDefinition extends BaseClass {
 
 	@Given("give value {string} to the search bar")
 	public void give_value_to_the_search_bar(String SearchKeyword) throws InterruptedException {
-
-		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(SearchKeyword);
+		testContext.getPageObjectManager().getHomePage().getSearchBox().click();
+		testContext.getPageObjectManager().getHomePage().getSearchBox().sendKeys(SearchKeyword);
 		Thread.sleep(3000);
 		this.SearchKeyword = SearchKeyword;
 
@@ -60,14 +86,13 @@ public class StepDefinition extends BaseClass {
 	@Given("comapare  in the search list and click")
 	public void comapare_in_the_search_list_and_click() {
 
-		List<WebElement> Searchsuggestions = driver.findElements(By.xpath("//div[@class='s-suggestion-container']"));
-		for (int i = 1; i <= Searchsuggestions.size(); i++) {
+		for (int i = 1; i <= testContext.getPageObjectManager().getHomePage().getSearchsuggestions().size(); i++) {
 			WebElement EachSearchsuggestions = driver
 					.findElement(By.xpath("//div[@class='autocomplete-results-container']//child::div[" + i + "]"));
 			if (SearchKeyword.equalsIgnoreCase(EachSearchsuggestions.getText())) {
 				System.out.println("Expected Text in Search Bar: " + EachSearchsuggestions.getText());
 				System.out.println("Actual Text in Search Bar: " + SearchKeyword);
-				driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+				testContext.getPageObjectManager().getHomePage().getSearchButton().click();
 				break;
 			}
 

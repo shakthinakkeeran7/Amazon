@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amazon.practice.GetProductTitle">
+      <class name="com.amazon.testNG.DependsOnGroup">
         <methods>
-          <include name="screenshot"/>
-          <include name="quit"/>
-          <include name="goToCart"/>
           <include name="SearchKeywords"/>
-          <include name="windowHandles"/>
-          <include name="browserLaunch"/>
           <include name="subMenu"/>
           <include name="getTitlePage"/>
+          <include name="goToCart"/>
+          <include name="screenshot"/>
+          <include name="windowHandles"/>
+          <include name="browserLaunch"/>
+          <include name="quit"/>
         </methods>
-      </class> <!-- com.amazon.practice.GetProductTitle -->
+      </class> <!-- com.amazon.testNG.DependsOnGroup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
